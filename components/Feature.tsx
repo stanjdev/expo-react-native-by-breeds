@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet } from "react-native"
-
+const globalStyles = require('../styles');
 interface FeatureProps {
   feature: string
   score: number
@@ -8,8 +8,8 @@ interface FeatureProps {
 export default function Feature({ feature, score }: FeatureProps) {
   return(
     <View style={styles.featureRow}>
-      <Text>{feature}:</Text>
-      <Text>{score}</Text>
+      <Text style={styles.featureText}>{feature}:</Text>
+      <Text style={styles.featureText}>{score}</Text>
     </View>
   )
 }
@@ -19,8 +19,11 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    backgroundColor: 'orange',
     marginBottom: 2,
-    // width: '100%',
+    paddingVertical: 2,
+    paddingHorizontal: 6,
+  },
+  featureText: {
+    fontSize: 16
   }
 })

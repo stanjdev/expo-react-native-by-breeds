@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import Feature from './Feature';
+const globalStyles = require('../styles');
 
 interface AnimalBreedProps {
   animal: any;
@@ -19,7 +20,7 @@ function AnimalBreed({ animal, title }: AnimalBreedProps) {
     <View style={styles.container}>
       <View style={styles.titleRow}>
         <Text style={styles.breedName}>{title}</Text>
-        <Text>Avg: {average}</Text>
+        <Text style={styles.breedName}>Avg: {average}</Text>
       </View>
 
       <View style={styles.featuresContainer}>
@@ -37,19 +38,22 @@ const styles = StyleSheet.create({
     marginRight: 20,
   },
   featuresContainer: {
-    // marginLeft: 10,
     marginBottom: 10,
+    backgroundColor: '#26B5A1',
+    borderRadius: 10,
+    paddingVertical: 4,
   },
   titleRow: {
     display: 'flex',
 		justifyContent: 'space-between',
     flexDirection: 'row',
+    marginBottom: 4
   },
   breedName: {
     fontFamily: 'Helvetica',
     fontWeight: 'bold',
-    fontSize: 16,
-    color: 'darkred',
+    fontSize: 18,
+    color: '#DEC027',
   },
 })
 
